@@ -16,7 +16,7 @@
 
 ## Установка проекта
 ```bash
-git clone github.com/bust6k/final-lms-project #изменить на реальное значение репозитория когда ты запушишь
+git clone git@github.com:bust6k/lms-project-final.git
 
 ```
 ## Установка зависимостей
