@@ -17,7 +17,10 @@
 ## Установка проекта
 ```bash
 git clone git@github.com:bust6k/lms-project-final.git
-
+```
+или если не работает попробуйте
+```bash
+git clone https://github.com/bust6k/lms-project-final.git
 ```
 ## Установка зависимостей
 
