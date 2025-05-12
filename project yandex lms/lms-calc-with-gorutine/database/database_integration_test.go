@@ -1,3 +1,4 @@
+//go:build integration
 package database
 
 import (
@@ -10,7 +11,7 @@ import (
 	"testing"
 )
 
-//go: build integration
+
 
 var db, errOpenDB = sqlx.Open("mysql", "root:pass12345@tcp(127.0.0.1:3306)/LMS")
 
