@@ -1,0 +1,17 @@
+.PHONY: deps test run clean
+
+
+deps:
+	go get -u github.com/gin-gonic/gin \
+		go.uber.org/zap \
+		github.com/bytedance/sonic \
+		github.com/bust6k/protoLMS \
+		github.com/go-sql-driver/mysql \
+		google.golang.org/protobuf \
+		google.golang.org/grpc \
+		golang.org/x/crypto \
+		github.com/stretchr/testify \
+		github.com/jmoiron/sqlx \
+		github.com/golang-jwt/jwt/v5 \
+		github.com/google/uuid
+	go mod tidy
