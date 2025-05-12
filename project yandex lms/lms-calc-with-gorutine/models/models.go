@@ -26,7 +26,7 @@ func UnmarshalRegistrationDetailsFromJSON(src []byte) (login, password string, e
 
 	var data map[string]json.RawMessage
 	if err := json.Unmarshal(src, &data); err != nil {
-		return "", "", fmt.Errorf("неаалидный json формат: %w", err)
+		return "", "", fmt.Errorf("невалидный json формат: %w", err)
 	}
 
 	
