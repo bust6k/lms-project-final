@@ -87,6 +87,13 @@ go get github.com/google/uuid
 make -f Makefile.addiction
 ```
 
+### предварительно  перейдя по каталогам
+```bash
+cd  lms-project-final
+cd 'project yandex lms'
+
+```
+
 ## Установка mysql
 ### для linux/mac os
 Обновление репозитория
