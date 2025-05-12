@@ -199,11 +199,11 @@ CREATE TABLE ProcessedExpressions (
 
 ### Запуск приложения
 ```bash
-make  all
+make  all #находясь в директории 'project yandex lms'
 ```
 ###  Запуск тестов
 ```bash
-go test -v -tags=unit ./...
+go test -v -tags=unit ./... #находясь в директории  'project yandex lms'
 ```
 
 # curl запросы
