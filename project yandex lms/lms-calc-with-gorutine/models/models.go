@@ -26,12 +26,12 @@ func UnmarshalRegistrationDetailsFromJSON(src []byte) (login, password string, e
 
 	var data map[string]json.RawMessage
 	if err := json.Unmarshal(src, &data); err != nil {
-		return "", "", fmt.Errorf("invalid JSON format: %w", err)
+		return "", "", fmt.Errorf("неаалидный json формат: %w", err)
 	}
 
 	
 	if len(data) != 1 {
-		return "", "", errors.New("JSON must contain exactly one key-value pair")
+		return "", "", errors.New("json должен иметь 1 пару ключ-значение")
 	}
 
 	
@@ -41,7 +41,7 @@ func UnmarshalRegistrationDetailsFromJSON(src []byte) (login, password string, e
 		
 		var pass string
 		if err := json.Unmarshal(val, &pass); err != nil {
-			return "", "", fmt.Errorf("invalid password format: %w", err)
+			return "", "", fmt.Errorf("невалидный формат пароля: %w", err)
 		}
 		password = pass
 	}
