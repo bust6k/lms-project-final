@@ -11,7 +11,7 @@ import (
 	"project_yandex_lms/lms-calc-with-gorutine/models"
 )
 
-//TODO  разделить обработчики post и get и вообще начинать постепенный рфакторинг всего кода в целом
+
 
 var (
 	grpcConn *grpc.ClientConn
