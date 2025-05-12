@@ -23,18 +23,18 @@ func NewUser(login string, password string, userId string) *User {
 }
 
 func UnmarshalRegistrationDetailsFromJSON(src []byte) (login, password string, err error) {
-	// Парсим в мапу
+
 	var data map[string]json.RawMessage
 	if err := json.Unmarshal(src, &data); err != nil {
 		return "", "", fmt.Errorf("invalid JSON format: %w", err)
 	}
 
-	// Проверяем ровно одну пару
+	
 	if len(data) != 1 {
 		return "", "", errors.New("JSON must contain exactly one key-value pair")
 	}
 
-	// Извлекаем единственную пару
+	
 	for key, val := range data {
 		login = key
 
