@@ -9,6 +9,8 @@ import (
 	"project_yandex_lms/lms-calc-with-gorutine/variables"
 )
 
+
+
 func GetOrPostTask(c *gin.Context) {
 	logger, err := zap.NewDevelopment()
 
@@ -17,28 +19,34 @@ func GetOrPostTask(c *gin.Context) {
 		log.Printf("ошибка при создании логгера zap с ошибкой: %v", err)
 		return
 	}
-
-	if c.Request.Method != http.MethodGet && c.Request.Method != http.MethodPost {
+	
+	switch c.Request.Method {
+	case http.MethodPost:
+		handlePostRequest(c,logger)
+	case http.MethodGet:
+		handleGetRequest(c)
+	default:
 		c.JSON(http.StatusBadRequest, gin.H{"error": "метод не разрешен"})
-		return
 	}
+}
 
-	if c.Request.Method == http.MethodPost {
-		err := c.ShouldBindJSON(&variables.CurrentTask)
-		if err != nil {
-			c.JSON(http.StatusUnprocessableEntity, gin.H{"error": "ошибка при чтении тела запроса"})
-			logger.Warn("ошибка при чтении тела запроса")
-			return
 
-		}
-		c.Status(http.StatusOK)
-
-	} else if c.Request.Method == http.MethodGet {
-
-		c.JSON(http.StatusOK, variables.CurrentTask)
-
-		variables.CurrentTask = entites.Task{0, 0, 0, "", variables.CurrentTask.Operation_time}
+func handlePostRequest(c *gin.Context,logger *zap.Logger){
+	
+	err := c.ShouldBindJSON(&variables.CurrentTask)
+	if err != nil {
+		c.JSON(http.StatusUnprocessableEntity, gin.H{"error": "ошибка при чтении тела запроса"})
+		logger.Warn("ошибка при чтении тела запроса",zap.Error(err))
 		return
 
 	}
+	c.Status(http.StatusOK)
+}
+
+
+func handleGetRequest(c *gin.Context){
+	c.JSON(http.StatusOK, variables.CurrentTask)
+
+	variables.CurrentTask = entites.Task{0, 0, 0, "", variables.CurrentTask.Operation_time}
+	return
 }
