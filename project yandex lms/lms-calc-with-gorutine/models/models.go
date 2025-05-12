@@ -38,7 +38,7 @@ func UnmarshalRegistrationDetailsFromJSON(src []byte) (login, password string, e
 	for key, val := range data {
 		login = key
 
-		// Парсим пароль из RawMessage
+		
 		var pass string
 		if err := json.Unmarshal(val, &pass); err != nil {
 			return "", "", fmt.Errorf("invalid password format: %w", err)
