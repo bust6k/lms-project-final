@@ -46,7 +46,7 @@ func CreateAUserExpressionInSystem(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": fmt.Sprintf("ошибка при попытке получить текущий id в базе данных:%v", err)})
 	}
-	newExpression.Id = currentIdInDB
+	newExpression.Id = currentIdInDB +1
 	logger.Info("в системе создано новое выражение",
 		zap.String("expression id", strconv.Itoa(newExpression.Id)),
 		zap.String("expression value", newExpression.Expression))
