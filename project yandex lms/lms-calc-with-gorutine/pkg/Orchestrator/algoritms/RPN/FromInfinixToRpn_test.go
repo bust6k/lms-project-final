@@ -6,7 +6,7 @@ import (
 )
 
 func TestInfixToRPN(t *testing.T) {
-	// Сохраняем оригинальные операторы и восстанавливаем после тестов
+	
 	originalOperators := variables.Operators
 	defer func() { variables.Operators = originalOperators }()
 
