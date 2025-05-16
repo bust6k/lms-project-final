@@ -15,85 +15,14 @@
 
 # Установка
 
-## Установка проекта
-```bash
-git clone git@github.com:bust6k/lms-project-final.git
-```
-или если не работает попробуйте
-```bash
-git clone https://github.com/bust6k/lms-project-final.git
-```
-## Установка зависимостей
 
-#### установка go gin
+установите отсутствующие зависимости 
 ```bash
-go get -u github.com/gin-gonic/gin
-
-```
-#### Установка zap
-```bash
-go get -u go.uber.org/zap
+go mod tidy
 ```
 
-#### Установка sonic
 
-```bash
-go get -u github.com/bytedance/sonic
-```
-#### установка gRPC кода
-```bash
-go get github.com/bust6k/protoLMS
-```
 
-#### установка драйвера mysql 
-
-```bash
-go get github.com/go-sql-driver/mysql
-```
-
-#### установка  protobuf  библиотеки
-```bash
-go get -u google.golang.org/protobuf
-```
-
-#### установка библиотеки gRPC
-```bash
-go get google.golang.org/grpc
-```
-#### Установка crypto
-```bash
-go get -u golang.org/x/crypto
-```
-#### Установка testify
-```bash
-go get github.com/stretchr/testify
-```
-
-#### Установка sqlx
-```bash
-go get github.com/jmoiron/sqlx 
-```
-#### установка jwt/v5
-```bash
-go get github.com/golang-jwt/jwt/v5
-```
-
-#### Установка uuid
-```bash
-go get github.com/google/uuid 
-```
-
-###  Или если не хочется скачивать все отдельно выполните
-```bash
-make -f Makefile.addiction
-```
-
-### предварительно  перейдя по каталогам
-```bash
-cd  lms-project-final
-cd 'project yandex lms'
-
-```
 
 ## Установка mysql
 ### для linux/mac os
